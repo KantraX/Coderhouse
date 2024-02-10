@@ -1,0 +1,56 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador interactivo para agregar estudiantes y sus notas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #formulario {
+            margin-bottom: 20px;
+        }
+        #mensaje {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="mensaje">Simulador interactivo para agregar estudiantes y sus notas</h1>
+    <div id="formulario">
+        <form id="estudianteForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <br>
+            <label for="nota1">Nota 1:</label>
+            <input type="number" id="nota1" min="1" max="7" step="0.1" required>
+            <br>
+            <label for="nota2">Nota 2:</label>
+            <input type="number" id="nota2" min="1" max="7" step="0.1" required>
+            <br>
+            <label for="nota3">Nota 3:</label>
+            <input type="number" id="nota3" min="1" max="7" step="0.1" required>
+            <br>
+            <label for="nota4">Nota 4:</label>
+            <input type="number" id="nota4" min="1" max="7" step="0.1" required>
+            <br>
+            <input type="submit" value="Guardar">
+        </form>
+        <hr>
+        <label for="filtroNombre">Filtrar estudiantes por nombre:</label>
+        <input type="text" id="filtroNombre">
+        <button type="button" onclick="filtrarEstudiantes()">Filtrar</button>
+        <br>
+        <label for="eliminarNombre">Eliminar estudiantes por nombre:</label>
+        <input type="text" id="eliminarNombre">
+        <button type="button" onclick="confirmarEliminarEstudiante()">Eliminar</button>
+        <br>
+        <button type="button" onclick="mostrarTodosEstudiantes()">Mostrar todos los estudiantes</button>
+        <button type="button" onclick="simuladorPromedio.eliminarTodosEstudiantes()">Eliminar todos los estudiantes</button>
+
+    </div>
+    <div id="listaEstudiantes"></div>
+    <script src="script.js"></script>
+</body>
+</html>
